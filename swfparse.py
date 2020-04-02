@@ -179,7 +179,7 @@ class Tag:
         self.length = length
 
     def _parse(self, data, pos):
-        self.data = parse_bytes(data, pos, self.length)
+        self.data, pos = parse_bytes(data, pos, self.length)
 
     @staticmethod
     def parse(data, pos):
