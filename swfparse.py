@@ -325,9 +325,9 @@ class SWFData:
     def __init__(self, data):
         pos = 0
         self.header, pos = Header.parse(data, pos)
+        self.tags = []
 
         if self.header.compression is None:
-            self.tags = []
             while pos // 8 < len(data):
                 tag, pos = Tag.parse(data, pos)
                 self.tags.append(tag)
